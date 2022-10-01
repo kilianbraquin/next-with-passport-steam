@@ -9,7 +9,7 @@ handler
   .use(auth)
   .get((req, res: NextApiResponse) => {
     // Should never be called
-    res.json({user: req["session"]})
+    res.json(req["session"] ?? {})
   });
 
 export default handler;
